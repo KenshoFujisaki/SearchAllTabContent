@@ -114,7 +114,11 @@ commands.addUserCommand(
 				const matchCountMax = 100;
 
 				let completions = [];
-				let filters = context.filters = args;
+				let filters = context.filters = args.map(function(e){
+					return e.replace(
+						/\*|\.|\(|\)|\\|\+|\?|\{|\}|\[|\]|\^|\$|\-|\||\//g,
+						function(e){ return '\\' + e });
+				});
 				let title, url, innerHtmlMsg;
 				title = url = innerHtmlMsg = "";
 
