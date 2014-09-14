@@ -22,6 +22,14 @@ main.jsの内容を_vimperatorrcに貼り付けると，
 その対象のタブに移動し，マッチした文字列について検索します．  
 （現状は，マッチした位置の文字列に遷移できません．）
 
-#### 補足
 キーバインドする場合は，*_vimperatorrc*ファイルに  
 例えば`nnoremap O :SearchAllTabContent<Space>`と記述すると*Shift+oキー*にバインドできます．
+
+#### カスタマイズ
+*main.js*内の定数値を変更することで，挙動をカスタマイズできます.  
+設定可能な定数と初期値は下記の通りです．
+```javascript
+const matchCountMax = 100;  //1タブ内でマッチする上限数
+                            //この値よりマッチ回数が多い場合，表示打ち切り
+const prefixLen = 50;       //Matchingにてマッチ箇所までの文字列長  
+```
