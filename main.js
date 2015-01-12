@@ -51,7 +51,7 @@ commands.addUserCommand(
 	function(args){
 		let searchWord, tabIndex, matchCount, url;
 		try {
-			let text = (args+"").match(/^([^\:]+)\:([^\:]+)\:(\d+)\:(\d+)\:(.*$)/);
+			let text = (args+"").match(/^([^\:]*)\:([^\:]*)\:(\d+)\:(\d+)\:(.*$)/);
 			searchWords = text[1].split(" ");
 			searchWord = text[2];
 			tabIndex = ~~text[3];
